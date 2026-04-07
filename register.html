@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Register | tanken.chat</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="/assets/logo.png" alt="tanken.chat logo">
+        <span>tanken.chat</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container" style="max-width:680px;">
+        <div class="card">
+          <h1>Register free</h1>
+          <p class="small">After registration, you receive exactly one WhatsApp welcome message. Reply <span class="code">START</span> to finish activation.</p>
+          <form id="registerForm">
+            <div>
+              <label for="mobile_number">Mobile number</label>
+              <input id="mobile_number" name="mobile_number" type="tel" placeholder="+491701234567" required>
+            </div>
+            <div>
+              <label for="user_name">User name</label>
+              <input id="user_name" name="user_name" type="text" placeholder="Marcelo" required>
+            </div>
+            <div>
+              <label for="preferred_fuel">Preferred fuel</label>
+              <select id="preferred_fuel" name="preferred_fuel" required>
+                <option value="diesel">Diesel</option>
+                <option value="e5">E5</option>
+                <option value="e10">E10</option>
+              </select>
+            </div>
+            <div>
+              <label for="max_radius_km">Maximum radius</label>
+              <select id="max_radius_km" name="max_radius_km" required>
+                <option value="3">3 km</option>
+                <option value="5">5 km</option>
+                <option value="10" selected>10 km</option>
+                <option value="15">15 km</option>
+                <option value="20">20 km</option>
+              </select>
+            </div>
+            <div>
+              <label for="language">Preferred language</label>
+              <select id="language" name="language" required>
+                <option value="de">German</option>
+                <option value="en">English</option>
+                <option value="tr">Turkish</option>
+                <option value="ar">Arabic</option>
+              </select>
+            </div>
+            <label class="checkbox"><input type="checkbox" id="privacy_accepted" required><span>I accept the <a href="/privacy.html" target="_blank">Privacy Policy</a>.</span></label>
+            <label class="checkbox"><input type="checkbox" id="terms_accepted" required><span>I accept the <a href="/terms.html" target="_blank">Terms and Conditions</a>.</span></label>
+            <label class="checkbox"><input type="checkbox" id="whatsapp_accepted" required><span>I agree to receive service replies through WhatsApp.</span></label>
+            <label class="checkbox"><input type="checkbox" id="welcome_optin_accepted" required><span>I agree to receive one WhatsApp welcome message from tanken.chat with activation instructions.</span></label>
+            <button class="btn" type="submit">Complete registration</button>
+          </form>
+          <div id="result" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/register.js"></script>
+</body>
+</html>

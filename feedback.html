@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Feedback | tanken.chat</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a class="brand" href="/">
+        <img src="/assets/logo.png" alt="tanken.chat logo">
+        <span>tanken.chat</span>
+      </a>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="container" style="max-width:680px;">
+        <div class="card">
+          <h1>Feedback</h1>
+          <form id="feedbackForm">
+            <div>
+              <label for="mobile_number">Mobile number (optional)</label>
+              <input id="mobile_number" type="tel" placeholder="+491701234567">
+            </div>
+            <div>
+              <label for="rating">Rating</label>
+              <select id="rating" required>
+                <option value="5">5</option>
+                <option value="4">4</option>
+                <option value="3">3</option>
+                <option value="2">2</option>
+                <option value="1">1</option>
+              </select>
+            </div>
+            <div>
+              <label for="comment">Comment</label>
+              <textarea id="comment" placeholder="Tell us what worked or what should be improved."></textarea>
+            </div>
+            <label class="checkbox"><input type="checkbox" id="allow_publish"><span>I agree that my feedback may be published anonymously on the tanken.chat website.</span></label>
+            <button class="btn" type="submit">Send feedback</button>
+          </form>
+          <div id="result" style="margin-top:16px;"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/js/feedback.js"></script>
+</body>
+</html>
