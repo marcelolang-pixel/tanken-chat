@@ -1,152 +1,58 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: #eef2ef;
-  color: #0f2b1d;
-  font-size: 18px;
-}
-
-.topbar {
-  padding: 24px;
-}
-
-.logo-large {
-  height: 70px;
+.logo-register {
+  height: 80px;
   width: auto;
-  display: block;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  padding: 24px;
-  align-items: start;
+.register-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px 60px;
 }
 
-.hero-card,
-.info-card,
-.mini-card {
+.register-card {
   background: white;
   border-radius: 20px;
-  padding: 28px;
+  padding: 36px;
+  width: 100%;
+  max-width: 760px;
 }
 
-.pill {
-  display: inline-block;
-  background: #dff0e3;
-  color: #0f7a36;
-  padding: 10px 16px;
-  border-radius: 20px;
-  font-size: 14px;
-  margin-bottom: 20px;
-}
-
-h1 {
-  font-size: 64px;
-  line-height: 1.05;
-  margin: 0 0 20px;
-}
-
-h2 {
-  font-size: 38px;
+.register-card h1 {
+  font-size: 52px;
   margin-top: 0;
 }
 
-h3 {
-  font-size: 24px;
-}
-
-p,
-li {
-  font-size: 20px;
-  line-height: 1.6;
-}
-
-.hero-actions {
-  margin-top: 24px;
-  display: flex;
-  gap: 14px;
-}
-
-.btn-primary,
-.btn-secondary {
-  padding: 14px 22px;
-  border-radius: 14px;
-  text-decoration: none;
+.register-card label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
   font-weight: bold;
+}
+
+.register-card input,
+.register-card select {
+  width: 100%;
+  padding: 14px;
   font-size: 18px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 
-.btn-primary {
-  background: #1f9446;
-  color: white;
+.check-group {
+  margin-top: 20px;
 }
 
-.btn-secondary {
-  background: #dff0e3;
-  color: #0f7a36;
-}
-
-.inline-pill {
-  background: #eef2ef;
-  padding: 3px 8px;
-  border-radius: 10px;
-}
-
-.note-box {
-  margin-top: 24px;
-  padding: 16px;
-  border: 1px solid #d7b45a;
-  border-radius: 14px;
-  background: #fffaf0;
-  font-size: 16px;
-}
-
-.mini-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
-  padding: 24px;
-}
-
-.footer {
-  padding: 24px;
-  font-size: 16px;
-}
-
-.footer nav {
-  display: flex;
-  gap: 18px;
+.check-group label {
+  display: block;
+  font-weight: normal;
   margin-bottom: 12px;
+  line-height: 1.5;
 }
 
-.footer a {
-  text-decoration: none;
-  color: #0f7a36;
-}
-
-@media(max-width:900px) {
-  .hero-grid,
-  .mini-grid {
-    grid-template-columns: 1fr;
-  }
-
-  h1 {
-    font-size: 42px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  p,
-  li {
-    font-size: 18px;
-  }
-
-  .logo-large {
-    height: 56px;
-  }
+.full-btn {
+  width: 100%;
+  margin-top: 24px;
+  border: none;
+  cursor: pointer;
 }
