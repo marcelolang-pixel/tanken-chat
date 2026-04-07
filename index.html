@@ -1,74 +1,83 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>tanken.chat</title>
-  <meta name="description" content="Find cheaper nearby fuel stations in Germany directly through WhatsApp.">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <header>
-    <div class="container">
-      <a class="brand" href="/">
-        <img src="/assets/logo.png" alt="tanken.chat logo">
-        <span>tanken.chat</span>
-      </a>
+
+<header class="topbar">
+  <img src="assets/logo.png" alt="tanken.chat logo" class="logo-large">
+</header>
+
+<main class="hero-grid">
+
+  <section class="hero-card">
+    <div class="pill">Germany-first WhatsApp fuel helper</div>
+
+    <h1>
+      Fuel prices rising?<br>
+      Ask tanken.chat<br>
+      before you refuel.
+    </h1>
+
+    <p>
+      No app. No search stress. Register once, activate by WhatsApp, then send your location or address and get the top nearby fuel options within your chosen radius.
+    </p>
+
+    <div class="hero-actions">
+      <a href="register.html" class="btn-primary">Register free</a>
+      <a href="https://wa.me/498921548989?text=START" class="btn-secondary">Open WhatsApp</a>
     </div>
-  </header>
+  </section>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div class="card">
-          <div class="badge">Germany-first WhatsApp fuel helper</div>
-          <h1>Fuel prices rising? Ask tanken.chat before you refuel.</h1>
-          <p>No app. No search stress. Register once, activate by WhatsApp, then send your location or address and get the top nearby fuel options within your chosen radius.</p>
-          <div class="cta-row">
-            <a class="btn" href="/register.html">Register free</a>
-            <a class="btn secondary" href="https://wa.me/498921548989?text=START">Open WhatsApp</a>
-          </div>
-        </div>
-        <div class="card">
-          <h2>How it works</h2>
-          <p>1. Register once on this website.</p>
-          <p>2. Receive one WhatsApp welcome message.</p>
-          <p>3. Reply <span class="code">START</span> to activate.</p>
-          <p>4. Send your location or address.</p>
-          <p>5. Receive the top nearby fuel options with map links.</p>
-          <div class="notice">The MVP is built for speed. The fastest and most reliable path is to share your WhatsApp location instead of typing a long address.</div>
-        </div>
-      </div>
-    </section>
+  <section class="info-card">
+    <h2>How it works</h2>
 
-    <section>
-      <div class="container steps">
-        <div class="step">
-          <strong>Register</strong>
-          Add your mobile number, preferred fuel, radius and language.
-        </div>
-        <div class="step">
-          <strong>Activate</strong>
-          Reply <span class="code">START</span> to the welcome message once.
-        </div>
-        <div class="step">
-          <strong>Use</strong>
-          Send location. Receive nearby cheapest options.
-        </div>
-      </div>
-    </section>
-  </main>
+    <ol>
+      <li>Register once on this website.</li>
+      <li>Receive one WhatsApp welcome message.</li>
+      <li>Reply <span class="inline-pill">START</span> to activate.</li>
+      <li>Send your location or address.</li>
+      <li>Receive the top nearby fuel options with map links.</li>
+    </ol>
 
-  <footer>
-    <div class="container">
-      <div class="footer-links">
-        <a href="/register.html">Register</a>
-        <a href="/feedback.html">Feedback</a>
-        <a href="/privacy.html">Privacy</a>
-        <a href="/terms.html">Terms</a>
-      </div>
-      <div>tanken.chat is a trademark of Fortuna Brands.</div>
+    <div class="note-box">
+      The MVP is built for speed. The fastest and most reliable path is to share your WhatsApp location instead of typing a long address.
     </div>
-  </footer>
+  </section>
+
+</main>
+
+<section class="mini-grid">
+  <div class="mini-card">
+    <h3>Register</h3>
+    <p>Add your mobile number, preferred fuel, radius and language.</p>
+  </div>
+
+  <div class="mini-card">
+    <h3>Activate</h3>
+    <p>Reply START to the welcome message once.</p>
+  </div>
+
+  <div class="mini-card">
+    <h3>Use</h3>
+    <p>Send location. Receive nearby cheapest options.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <nav>
+    <a href="register.html">Register</a>
+    <a href="feedback.html">Feedback</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+
+  <p>tanken.chat is a trademark of Fortuna Brands.</p>
+</footer>
+
 </body>
 </html>
