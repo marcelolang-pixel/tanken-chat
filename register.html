@@ -1,54 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register | tanken.chat</title>
+  <title>Registrierung | tanken.chat</title>
   <meta
     name="description"
-    content="Register free for tanken.chat and activate your account by replying START in WhatsApp."
+    content="Registriere dich kostenlos für tanken.chat und aktiviere dein Konto, indem du per WhatsApp mit START antwortest."
   />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand small" aria-label="tanken.chat home">
-        <img src="assets/logo.png" alt="tanken.chat logo" />
+      <a href="index.html" class="brand small" aria-label="tanken.chat Startseite">
+        <img src="assets/logo.png" alt="tanken.chat Logo" />
       </a>
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="index.html#how-it-works">How it works</a>
-      </nav>
+      <div class="header-right">
+        <nav class="nav-links">
+          <a href="index.html">Startseite</a>
+          <a href="index.html#how-it-works">So funktioniert's</a>
+        </nav>
+
+        <div class="lang-switch" aria-label="Sprachauswahl">
+          <a href="register.html" class="active">DE</a>
+          <a href="register-en.html">EN</a>
+          <a href="register-tr.html">TR</a>
+          <a href="register-ar.html">AR</a>
+        </div>
+      </div>
     </div>
   </header>
 
   <main class="form-page">
     <div class="container form-shell">
       <aside class="info-panel">
-        <div class="badge">Free registration</div>
-        <h1>Register once. Activate on WhatsApp. Refuel smarter.</h1>
+        <div class="badge">Kostenlose Registrierung</div>
+        <h1>Einmal registrieren. Per WhatsApp aktivieren. Smarter tanken.</h1>
         <p>
-          After registration, you will receive exactly one WhatsApp welcome message. Reply <strong>START</strong> to finish activation.
+          Nach der Registrierung erhältst du genau eine WhatsApp-Willkommensnachricht. Antworte mit <strong>START</strong>, um die Aktivierung abzuschließen.
         </p>
 
         <ul class="info-list">
-          <li><strong>Register:</strong> mobile number, user name, fuel type, radius, and language.</li>
-          <li><strong>Activate:</strong> reply START in WhatsApp.</li>
-          <li><strong>Use:</strong> send your location or address and receive nearby fuel options.</li>
+          <li><strong>Registrieren:</strong> Mobilnummer, Benutzername, Kraftstoff, Radius und Sprache angeben.</li>
+          <li><strong>Aktivieren:</strong> Per WhatsApp mit START antworten.</li>
+          <li><strong>Nutzen:</strong> Standort oder Adresse senden und Tankoptionen in der Nähe erhalten.</li>
         </ul>
       </aside>
 
       <section class="form-panel">
-        <h2>Register free</h2>
+        <h2>Kostenlos registrieren</h2>
         <p class="intro">
-          Complete the form below to prepare your WhatsApp-based fuel lookup service.
+          Fülle das Formular aus, um deinen WhatsApp-basierten Tankservice einzurichten.
         </p>
 
         <form class="form-grid" action="#" method="post">
           <div class="field">
-            <label for="mobile">Mobile number</label>
+            <label for="mobile">Mobilnummer</label>
             <input
               class="input"
               type="tel"
@@ -60,7 +69,7 @@
           </div>
 
           <div class="field">
-            <label for="username">User name</label>
+            <label for="username">Benutzername</label>
             <input
               class="input"
               type="text"
@@ -72,9 +81,9 @@
           </div>
 
           <div class="field">
-            <label for="fuel">Preferred fuel</label>
+            <label for="fuel">Bevorzugter Kraftstoff</label>
             <select class="select" id="fuel" name="fuel" required>
-              <option value="">Select fuel</option>
+              <option value="">Kraftstoff wählen</option>
               <option value="diesel">Diesel</option>
               <option value="e5">E5</option>
               <option value="e10">E10</option>
@@ -82,9 +91,9 @@
           </div>
 
           <div class="field">
-            <label for="radius">Maximum radius</label>
+            <label for="radius">Maximaler Radius</label>
             <select class="select" id="radius" name="radius" required>
-              <option value="">Select radius</option>
+              <option value="">Radius wählen</option>
               <option value="3">3 km</option>
               <option value="5">5 km</option>
               <option value="10">10 km</option>
@@ -95,47 +104,47 @@
           </div>
 
           <div class="field">
-            <label for="language">Preferred language</label>
+            <label for="language">Bevorzugte Sprache</label>
             <select class="select" id="language" name="language" required>
-              <option value="">Select language</option>
-              <option value="de">German</option>
-              <option value="en">English</option>
-              <option value="tr">Turkish</option>
-              <option value="ar">Arabic</option>
+              <option value="">Sprache wählen</option>
+              <option value="de">Deutsch</option>
+              <option value="en">Englisch</option>
+              <option value="tr">Türkisch</option>
+              <option value="ar">Arabisch</option>
             </select>
           </div>
 
           <div class="checkbox-group">
             <div class="checkbox-item">
               <input type="checkbox" id="privacy" name="privacy" required />
-              <label for="privacy">I accept the Privacy Policy.</label>
+              <label for="privacy">Ich akzeptiere die Datenschutzrichtlinie.</label>
             </div>
 
             <div class="checkbox-item">
               <input type="checkbox" id="terms" name="terms" required />
-              <label for="terms">I accept the Terms and Conditions.</label>
+              <label for="terms">Ich akzeptiere die Allgemeinen Geschäftsbedingungen.</label>
             </div>
 
             <div class="checkbox-item">
               <input type="checkbox" id="whatsapp" name="whatsapp" required />
-              <label for="whatsapp">I agree to receive service messages through WhatsApp.</label>
+              <label for="whatsapp">Ich stimme zu, Servicenachrichten über WhatsApp zu erhalten.</label>
             </div>
           </div>
 
           <div class="form-note">
-            By registering, you prepare your account to receive a one-time WhatsApp welcome message. Activation is completed only after your reply <strong>START</strong>.
+            Mit der Registrierung bereitest du dein Konto auf eine einmalige WhatsApp-Willkommensnachricht vor. Die Aktivierung ist erst abgeschlossen, nachdem du mit <strong>START</strong> geantwortet hast.
           </div>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Create account</button>
-            <a class="btn btn-secondary" href="index.html">Back to home</a>
+            <button class="btn btn-primary" type="submit">Konto erstellen</button>
+            <a class="btn btn-secondary" href="index.html">Zurück zur Startseite</a>
           </div>
         </form>
 
         <div class="helper-links">
           <a href="feedback.html">Feedback</a>
-          <a href="privacy.html">Privacy</a>
-          <a href="terms.html">Terms</a>
+          <a href="privacy.html">Datenschutz</a>
+          <a href="terms.html">AGB</a>
         </div>
       </section>
     </div>
@@ -145,8 +154,8 @@
     <div class="container footer-inner">
       <div>tanken.chat is a trademark of Fortuna Brands.</div>
       <div class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="register.html">Register</a>
+        <a href="index.html">Startseite</a>
+        <a href="register.html">Registrieren</a>
       </div>
     </div>
   </footer>
