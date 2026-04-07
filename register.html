@@ -3,31 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Registrierung | tanken.chat</title>
-  <meta
-    name="description"
-    content="Registriere dich kostenlos für tanken.chat und aktiviere dein Konto, indem du per WhatsApp mit START antwortest."
-  />
+  <title>tanken.chat</title>
+  <meta name="description" content="tanken.chat register page" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body data-page="register">
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand small" aria-label="tanken.chat Startseite">
-        <img src="assets/logo.png" alt="tanken.chat Logo" />
+      <a href="index.html" class="brand small" aria-label="tanken.chat home">
+        <img src="assets/logo.png" alt="tanken.chat logo" />
       </a>
 
       <div class="header-right">
         <nav class="nav-links">
-          <a href="index.html">Startseite</a>
-          <a href="index.html#how-it-works">So funktioniert's</a>
+          <a href="index.html" data-i18n="nav_home">Startseite</a>
+          <a href="index.html#how-it-works" data-i18n="nav_how">So funktioniert's</a>
         </nav>
 
-        <div class="lang-switch" aria-label="Sprachauswahl">
-          <a href="register.html" class="active">DE</a>
-          <a href="register-en.html">EN</a>
-          <a href="register-tr.html">TR</a>
-          <a href="register-ar.html">AR</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="de">DE</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="tr">TR</button>
+          <button type="button" class="lang-btn" data-lang="ar">AR</button>
         </div>
       </div>
     </div>
@@ -36,64 +33,48 @@
   <main class="form-page">
     <div class="container form-shell">
       <aside class="info-panel">
-        <div class="badge">Kostenlose Registrierung</div>
-        <h1>Einmal registrieren. Per WhatsApp aktivieren. Smarter tanken.</h1>
-        <p>
+        <div class="badge" data-i18n="info_badge">Kostenlose Registrierung</div>
+        <h1 data-i18n="info_title">Einmal registrieren. Per WhatsApp aktivieren. Smarter tanken.</h1>
+        <p data-i18n="info_text">
           Nach der Registrierung erhältst du genau eine WhatsApp-Willkommensnachricht. Antworte mit <strong>START</strong>, um die Aktivierung abzuschließen.
         </p>
 
         <ul class="info-list">
-          <li><strong>Registrieren:</strong> Mobilnummer, Benutzername, Kraftstoff, Radius und Sprache angeben.</li>
-          <li><strong>Aktivieren:</strong> Per WhatsApp mit START antworten.</li>
-          <li><strong>Nutzen:</strong> Standort oder Adresse senden und Tankoptionen in der Nähe erhalten.</li>
+          <li data-i18n="info_1"><strong>Registrieren:</strong> Mobilnummer, Benutzername, Kraftstoff, Radius und Sprache angeben.</li>
+          <li data-i18n="info_2"><strong>Aktivieren:</strong> Per WhatsApp mit START antworten.</li>
+          <li data-i18n="info_3"><strong>Nutzen:</strong> Standort oder Adresse senden und Tankoptionen in der Nähe erhalten.</li>
         </ul>
       </aside>
 
       <section class="form-panel">
-        <h2>Kostenlos registrieren</h2>
-        <p class="intro">
-          Fülle das Formular aus, um deinen WhatsApp-basierten Tankservice einzurichten.
-        </p>
+        <h2 data-i18n="form_title">Kostenlos registrieren</h2>
+        <p class="intro" data-i18n="form_intro">Fülle das Formular aus, um deinen WhatsApp-basierten Tankservice einzurichten.</p>
 
         <form class="form-grid" action="#" method="post">
           <div class="field">
-            <label for="mobile">Mobilnummer</label>
-            <input
-              class="input"
-              type="tel"
-              id="mobile"
-              name="mobile"
-              placeholder="+491701234567"
-              required
-            />
+            <label for="mobile" data-i18n="label_mobile">Mobilnummer</label>
+            <input class="input" type="tel" id="mobile" name="mobile" placeholder="+491701234567" required />
           </div>
 
           <div class="field">
-            <label for="username">Benutzername</label>
-            <input
-              class="input"
-              type="text"
-              id="username"
-              name="username"
-              placeholder="Marcelo"
-              required
-            />
+            <label for="username" data-i18n="label_username">Benutzername</label>
+            <input class="input" type="text" id="username" name="username" placeholder="Marcelo" required />
           </div>
 
           <div class="field">
-            <label for="fuel">Bevorzugter Kraftstoff</label>
+            <label for="fuel" data-i18n="label_fuel">Bevorzugter Kraftstoff</label>
             <select class="select" id="fuel" name="fuel" required>
-              <option value="">Kraftstoff wählen</option>
-              <option value="diesel">Diesel</option>
-              <option value="e5">E5</option>
-              <option value="e10">E10</option>
+              <option value="" data-i18n="opt_fuel">Kraftstoff wählen</option>
+              <option value="diesel" data-i18n="fuel_diesel">Diesel</option>
+              <option value="e5" data-i18n="fuel_e5">E5</option>
+              <option value="e10" data-i18n="fuel_e10">E10</option>
             </select>
           </div>
 
           <div class="field">
-            <label for="radius">Maximaler Radius</label>
+            <label for="radius" data-i18n="label_radius">Maximaler Radius</label>
             <select class="select" id="radius" name="radius" required>
-              <option value="">Radius wählen</option>
+              <option value="" data-i18n="opt_radius">Radius wählen</option>
               <option value="3">3 km</option>
               <option value="5">5 km</option>
               <option value="10">10 km</option>
@@ -104,47 +85,47 @@
           </div>
 
           <div class="field">
-            <label for="language">Bevorzugte Sprache</label>
+            <label for="language" data-i18n="label_language">Bevorzugte Sprache</label>
             <select class="select" id="language" name="language" required>
-              <option value="">Sprache wählen</option>
-              <option value="de">Deutsch</option>
-              <option value="en">Englisch</option>
-              <option value="tr">Türkisch</option>
-              <option value="ar">Arabisch</option>
+              <option value="" data-i18n="opt_language">Sprache wählen</option>
+              <option value="de" data-i18n="lang_de">Deutsch</option>
+              <option value="en" data-i18n="lang_en">Englisch</option>
+              <option value="tr" data-i18n="lang_tr">Türkisch</option>
+              <option value="ar" data-i18n="lang_ar">Arabisch</option>
             </select>
           </div>
 
           <div class="checkbox-group">
             <div class="checkbox-item">
               <input type="checkbox" id="privacy" name="privacy" required />
-              <label for="privacy">Ich akzeptiere die Datenschutzrichtlinie.</label>
+              <label for="privacy" data-i18n="check_privacy">Ich akzeptiere die Datenschutzrichtlinie.</label>
             </div>
 
             <div class="checkbox-item">
               <input type="checkbox" id="terms" name="terms" required />
-              <label for="terms">Ich akzeptiere die Allgemeinen Geschäftsbedingungen.</label>
+              <label for="terms" data-i18n="check_terms">Ich akzeptiere die Allgemeinen Geschäftsbedingungen.</label>
             </div>
 
             <div class="checkbox-item">
               <input type="checkbox" id="whatsapp" name="whatsapp" required />
-              <label for="whatsapp">Ich stimme zu, Servicenachrichten über WhatsApp zu erhalten.</label>
+              <label for="whatsapp" data-i18n="check_whatsapp">Ich stimme zu, Servicenachrichten über WhatsApp zu erhalten.</label>
             </div>
           </div>
 
-          <div class="form-note">
+          <div class="form-note" data-i18n="form_note">
             Mit der Registrierung bereitest du dein Konto auf eine einmalige WhatsApp-Willkommensnachricht vor. Die Aktivierung ist erst abgeschlossen, nachdem du mit <strong>START</strong> geantwortet hast.
           </div>
 
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit">Konto erstellen</button>
-            <a class="btn btn-secondary" href="index.html">Zurück zur Startseite</a>
+            <button class="btn btn-primary" type="submit" data-i18n="form_submit">Konto erstellen</button>
+            <a class="btn btn-secondary" href="index.html" data-i18n="form_back">Zurück zur Startseite</a>
           </div>
         </form>
 
         <div class="helper-links">
-          <a href="feedback.html">Feedback</a>
-          <a href="privacy.html">Datenschutz</a>
-          <a href="terms.html">AGB</a>
+          <a href="feedback.html" data-i18n="footer_feedback">Feedback</a>
+          <a href="privacy.html" data-i18n="footer_privacy">Datenschutz</a>
+          <a href="terms.html" data-i18n="footer_terms">AGB</a>
         </div>
       </section>
     </div>
@@ -154,10 +135,193 @@
     <div class="container footer-inner">
       <div>tanken.chat is a trademark of Fortuna Brands.</div>
       <div class="footer-links">
-        <a href="index.html">Startseite</a>
-        <a href="register.html">Registrieren</a>
+        <a href="index.html" data-i18n="nav_home">Startseite</a>
+        <a href="register.html" data-i18n="footer_register">Registrieren</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      de: {
+        nav_home: "Startseite",
+        nav_how: "So funktioniert's",
+        info_badge: "Kostenlose Registrierung",
+        info_title: "Einmal registrieren. Per WhatsApp aktivieren. Smarter tanken.",
+        info_text: "Nach der Registrierung erhältst du genau eine WhatsApp-Willkommensnachricht. Antworte mit <strong>START</strong>, um die Aktivierung abzuschließen.",
+        info_1: "<strong>Registrieren:</strong> Mobilnummer, Benutzername, Kraftstoff, Radius und Sprache angeben.",
+        info_2: "<strong>Aktivieren:</strong> Per WhatsApp mit START antworten.",
+        info_3: "<strong>Nutzen:</strong> Standort oder Adresse senden und Tankoptionen in der Nähe erhalten.",
+        form_title: "Kostenlos registrieren",
+        form_intro: "Fülle das Formular aus, um deinen WhatsApp-basierten Tankservice einzurichten.",
+        label_mobile: "Mobilnummer",
+        label_username: "Benutzername",
+        label_fuel: "Bevorzugter Kraftstoff",
+        opt_fuel: "Kraftstoff wählen",
+        fuel_diesel: "Diesel",
+        fuel_e5: "E5",
+        fuel_e10: "E10",
+        label_radius: "Maximaler Radius",
+        opt_radius: "Radius wählen",
+        label_language: "Bevorzugte Sprache",
+        opt_language: "Sprache wählen",
+        lang_de: "Deutsch",
+        lang_en: "Englisch",
+        lang_tr: "Türkisch",
+        lang_ar: "Arabisch",
+        check_privacy: "Ich akzeptiere die Datenschutzrichtlinie.",
+        check_terms: "Ich akzeptiere die Allgemeinen Geschäftsbedingungen.",
+        check_whatsapp: "Ich stimme zu, Servicenachrichten über WhatsApp zu erhalten.",
+        form_note: "Mit der Registrierung bereitest du dein Konto auf eine einmalige WhatsApp-Willkommensnachricht vor. Die Aktivierung ist erst abgeschlossen, nachdem du mit <strong>START</strong> geantwortet hast.",
+        form_submit: "Konto erstellen",
+        form_back: "Zurück zur Startseite",
+        footer_register: "Registrieren",
+        footer_feedback: "Feedback",
+        footer_privacy: "Datenschutz",
+        footer_terms: "AGB"
+      },
+      en: {
+        nav_home: "Home",
+        nav_how: "How it works",
+        info_badge: "Free registration",
+        info_title: "Register once. Activate on WhatsApp. Refuel smarter.",
+        info_text: "After registration, you will receive exactly one WhatsApp welcome message. Reply <strong>START</strong> to complete activation.",
+        info_1: "<strong>Register:</strong> add mobile number, user name, fuel type, radius, and language.",
+        info_2: "<strong>Activate:</strong> reply START in WhatsApp.",
+        info_3: "<strong>Use:</strong> send location or address and receive nearby fuel options.",
+        form_title: "Register free",
+        form_intro: "Complete the form below to prepare your WhatsApp-based fuel lookup service.",
+        label_mobile: "Mobile number",
+        label_username: "User name",
+        label_fuel: "Preferred fuel",
+        opt_fuel: "Select fuel",
+        fuel_diesel: "Diesel",
+        fuel_e5: "E5",
+        fuel_e10: "E10",
+        label_radius: "Maximum radius",
+        opt_radius: "Select radius",
+        label_language: "Preferred language",
+        opt_language: "Select language",
+        lang_de: "German",
+        lang_en: "English",
+        lang_tr: "Turkish",
+        lang_ar: "Arabic",
+        check_privacy: "I accept the Privacy Policy.",
+        check_terms: "I accept the Terms and Conditions.",
+        check_whatsapp: "I agree to receive service messages through WhatsApp.",
+        form_note: "By registering, you prepare your account to receive a one-time WhatsApp welcome message. Activation is completed only after your reply <strong>START</strong>.",
+        form_submit: "Create account",
+        form_back: "Back to home",
+        footer_register: "Register",
+        footer_feedback: "Feedback",
+        footer_privacy: "Privacy",
+        footer_terms: "Terms"
+      },
+      tr: {
+        nav_home: "Ana sayfa",
+        nav_how: "Nasıl çalışır",
+        info_badge: "Ücretsiz kayıt",
+        info_title: "Bir kez kayıt ol. WhatsApp'ta etkinleştir. Daha akıllı yakıt al.",
+        info_text: "Kayıttan sonra tam olarak bir WhatsApp karşılama mesajı alacaksın. Etkinleştirmeyi tamamlamak için <strong>START</strong> yanıtını ver.",
+        info_1: "<strong>Kayıt:</strong> cep telefonu numarası, kullanıcı adı, yakıt türü, yarıçap ve dil ekle.",
+        info_2: "<strong>Etkinleştir:</strong> WhatsApp'ta START yanıtını ver.",
+        info_3: "<strong>Kullan:</strong> konumunu veya adresini gönder ve yakın yakıt seçeneklerini al.",
+        form_title: "Ücretsiz kayıt ol",
+        form_intro: "WhatsApp tabanlı yakıt arama hizmetini hazırlamak için aşağıdaki formu doldur.",
+        label_mobile: "Cep telefonu numarası",
+        label_username: "Kullanıcı adı",
+        label_fuel: "Tercih edilen yakıt",
+        opt_fuel: "Yakıt seç",
+        fuel_diesel: "Dizel",
+        fuel_e5: "E5",
+        fuel_e10: "E10",
+        label_radius: "Maksimum yarıçap",
+        opt_radius: "Yarıçap seç",
+        label_language: "Tercih edilen dil",
+        opt_language: "Dil seç",
+        lang_de: "Almanca",
+        lang_en: "İngilizce",
+        lang_tr: "Türkçe",
+        lang_ar: "Arapça",
+        check_privacy: "Gizlilik Politikasını kabul ediyorum.",
+        check_terms: "Şartlar ve Koşulları kabul ediyorum.",
+        check_whatsapp: "WhatsApp üzerinden hizmet mesajları almayı kabul ediyorum.",
+        form_note: "Kayıt olarak hesabını bir defalık WhatsApp karşılama mesajı almaya hazırlarsın. Etkinleştirme ancak <strong>START</strong> yanıtından sonra tamamlanır.",
+        form_submit: "Hesap oluştur",
+        form_back: "Ana sayfaya dön",
+        footer_register: "Kayıt ol",
+        footer_feedback: "Geri bildirim",
+        footer_privacy: "Gizlilik",
+        footer_terms: "Şartlar"
+      },
+      ar: {
+        nav_home: "الرئيسية",
+        nav_how: "كيف يعمل",
+        info_badge: "تسجيل مجاني",
+        info_title: "سجّل مرة واحدة. فعّل عبر واتساب. وازود بالوقود بذكاء أكبر.",
+        info_text: "بعد التسجيل، ستتلقى رسالة ترحيب واحدة فقط على واتساب. أرسل <strong>START</strong> لإكمال التفعيل.",
+        info_1: "<strong>التسجيل:</strong> أضف رقم الهاتف المحمول واسم المستخدم ونوع الوقود والنطاق واللغة.",
+        info_2: "<strong>التفعيل:</strong> أرسل START عبر واتساب.",
+        info_3: "<strong>الاستخدام:</strong> أرسل الموقع أو العنوان واحصل على خيارات الوقود القريبة.",
+        form_title: "سجّل مجاناً",
+        form_intro: "أكمل النموذج أدناه لإعداد خدمة البحث عن الوقود عبر واتساب.",
+        label_mobile: "رقم الهاتف المحمول",
+        label_username: "اسم المستخدم",
+        label_fuel: "نوع الوقود المفضل",
+        opt_fuel: "اختر الوقود",
+        fuel_diesel: "ديزل",
+        fuel_e5: "E5",
+        fuel_e10: "E10",
+        label_radius: "أقصى نطاق",
+        opt_radius: "اختر النطاق",
+        label_language: "اللغة المفضلة",
+        opt_language: "اختر اللغة",
+        lang_de: "الألمانية",
+        lang_en: "الإنجليزية",
+        lang_tr: "التركية",
+        lang_ar: "العربية",
+        check_privacy: "أوافق على سياسة الخصوصية.",
+        check_terms: "أوافق على الشروط والأحكام.",
+        check_whatsapp: "أوافق على تلقي رسائل الخدمة عبر واتساب.",
+        form_note: "من خلال التسجيل، تقوم بإعداد حسابك لتلقي رسالة ترحيب واحدة عبر واتساب. يكتمل التفعيل فقط بعد ردك بكلمة <strong>START</strong>.",
+        form_submit: "إنشاء الحساب",
+        form_back: "العودة إلى الرئيسية",
+        footer_register: "التسجيل",
+        footer_feedback: "ملاحظات",
+        footer_privacy: "الخصوصية",
+        footer_terms: "الشروط"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.de;
+      document.documentElement.lang = lang === 'ar' ? 'ar' : lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.classList.toggle('rtl', lang === 'ar');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem('tanken_lang', lang);
+
+      const select = document.getElementById('language');
+      if (select) {
+        select.value = lang;
+      }
+    }
+
+    const savedLang = localStorage.getItem('tanken_lang') || 'de';
+    applyLanguage(savedLang);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+  </script>
 </body>
 </html>
