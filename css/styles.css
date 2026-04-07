@@ -29,6 +29,10 @@ body {
   line-height: 1.5;
 }
 
+body.rtl {
+  direction: rtl;
+}
+
 img {
   max-width: 100%;
   display: block;
@@ -41,6 +45,10 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
 }
 
 .container {
@@ -61,7 +69,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 96px;
+  min-height: 100px;
   gap: 24px;
 }
 
@@ -73,14 +81,14 @@ a:hover {
 }
 
 .brand img {
-  height: 82px;
+  height: 92px;
   width: auto;
   max-width: none;
   display: block;
 }
 
 .brand.small img {
-  height: 72px;
+  height: 82px;
   width: auto;
   max-width: none;
 }
@@ -112,7 +120,7 @@ a:hover {
   gap: 8px;
 }
 
-.lang-switch a {
+.lang-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -125,15 +133,14 @@ a:hover {
   color: var(--accent);
   font-size: 14px;
   font-weight: 700;
-  text-decoration: none;
+  cursor: pointer;
 }
 
-.lang-switch a:hover {
+.lang-btn:hover {
   background: #f3f4f6;
-  text-decoration: none;
 }
 
-.lang-switch a.active {
+.lang-btn.active {
   background: var(--brand);
   border-color: var(--brand);
   color: #fff;
@@ -572,11 +579,11 @@ textarea:focus {
   }
 
   .brand img {
-    height: 68px;
+    height: 72px;
   }
 
   .brand.small img {
-    height: 60px;
+    height: 64px;
   }
 
   .nav-links {
@@ -599,11 +606,11 @@ textarea:focus {
   }
 
   .brand img {
-    height: 56px;
+    height: 60px;
   }
 
   .brand.small img {
-    height: 50px;
+    height: 54px;
   }
 
   .hero-copy h1,
