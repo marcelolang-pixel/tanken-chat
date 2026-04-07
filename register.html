@@ -50,7 +50,7 @@
         <h2 data-i18n="form_title">Kostenlos registrieren</h2>
         <p class="intro" data-i18n="form_intro">Fülle das Formular aus, um deinen WhatsApp-basierten Tankservice einzurichten.</p>
 
-        <form class="form-grid" action="#" method="post">
+        <form class="form-grid" id="registerForm">
           <div class="field">
             <label for="mobile" data-i18n="label_mobile">Mobilnummer</label>
             <input class="input" type="tel" id="mobile" name="mobile" placeholder="+491701234567" required />
@@ -116,8 +116,10 @@
             Mit der Registrierung bereitest du dein Konto auf eine einmalige WhatsApp-Willkommensnachricht vor. Die Aktivierung ist erst abgeschlossen, nachdem du mit <strong>START</strong> geantwortet hast.
           </div>
 
+          <div id="formMessage" class="form-note" style="display:none;"></div>
+
           <div class="form-actions">
-            <button class="btn btn-primary" type="submit" data-i18n="form_submit">Konto erstellen</button>
+            <button class="btn btn-primary" id="submitBtn" type="submit" data-i18n="form_submit">Konto erstellen</button>
             <a class="btn btn-secondary" href="index.html" data-i18n="form_back">Zurück zur Startseite</a>
           </div>
         </form>
@@ -142,6 +144,8 @@
   </footer>
 
   <script>
+    const API_BASE = "https://api.tanken.chat";
+
     const translations = {
       de: {
         nav_home: "Startseite",
@@ -178,7 +182,11 @@
         footer_register: "Registrieren",
         footer_feedback: "Feedback",
         footer_privacy: "Datenschutz",
-        footer_terms: "AGB"
+        footer_terms: "AGB",
+        sending: "Wird gesendet...",
+        success: "Registrierung erfolgreich. Bitte prüfe jetzt WhatsApp und antworte mit START, um dein Konto zu aktivieren.",
+        error: "Die Registrierung konnte nicht abgeschlossen werden. Bitte versuche es erneut.",
+        missing: "Bitte fülle alle Felder korrekt aus und akzeptiere alle Pflichtfelder."
       },
       en: {
         nav_home: "Home",
@@ -215,7 +223,11 @@
         footer_register: "Register",
         footer_feedback: "Feedback",
         footer_privacy: "Privacy",
-        footer_terms: "Terms"
+        footer_terms: "Terms",
+        sending: "Submitting...",
+        success: "Registration successful. Please check WhatsApp and reply START to activate your account.",
+        error: "Registration could not be completed. Please try again.",
+        missing: "Please complete all fields correctly and accept all required items."
       },
       tr: {
         nav_home: "Ana sayfa",
@@ -252,7 +264,11 @@
         footer_register: "Kayıt ol",
         footer_feedback: "Geri bildirim",
         footer_privacy: "Gizlilik",
-        footer_terms: "Şartlar"
+        footer_terms: "Şartlar",
+        sending: "Gönderiliyor...",
+        success: "Kayıt başarılı. Lütfen şimdi WhatsApp'ı kontrol et ve hesabını etkinleştirmek için START yanıtını ver.",
+        error: "Kayıt tamamlanamadı. Lütfen tekrar dene.",
+        missing: "Lütfen tüm alanları doğru doldur ve gerekli tüm kutuları kabul et."
       },
       ar: {
         nav_home: "الرئيسية",
@@ -289,12 +305,19 @@
         footer_register: "التسجيل",
         footer_feedback: "ملاحظات",
         footer_privacy: "الخصوصية",
-        footer_terms: "الشروط"
+        footer_terms: "الشروط",
+        sending: "جارٍ الإرسال...",
+        success: "تم التسجيل بنجاح. يرجى التحقق من واتساب الآن والرد بكلمة START لتفعيل حسابك.",
+        error: "تعذر إكمال التسجيل. يرجى المحاولة مرة أخرى.",
+        missing: "يرجى إكمال جميع الحقول بشكل صحيح والموافقة على جميع المتطلبات."
       }
     };
 
+    let currentLang = localStorage.getItem('tanken_lang') || 'de';
+
     function applyLanguage(lang) {
       const dict = translations[lang] || translations.de;
+      currentLang = lang;
       document.documentElement.lang = lang === 'ar' ? 'ar' : lang;
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.body.classList.toggle('rtl', lang === 'ar');
@@ -308,16 +331,78 @@
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
 
-      localStorage.setItem('tanken_lang', lang);
-
       const select = document.getElementById('language');
-      if (select) {
-        select.value = lang;
-      }
+      if (select) select.value = lang;
+
+      localStorage.setItem('tanken_lang', lang);
     }
 
-    const savedLang = localStorage.getItem('tanken_lang') || 'de';
-    applyLanguage(savedLang);
+    function showMessage(text, isError = false) {
+      const box = document.getElementById('formMessage');
+      box.style.display = 'block';
+      box.textContent = text;
+      box.style.color = isError ? '#b91c1c' : '#15803d';
+      box.style.fontWeight = '700';
+    }
+
+    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const dict = translations[currentLang] || translations.de;
+      const submitBtn = document.getElementById('submitBtn');
+      const mobile = document.getElementById('mobile').value.trim();
+      const user_name = document.getElementById('username').value.trim();
+      const preferred_fuel = document.getElementById('fuel').value;
+      const max_radius_km = Number(document.getElementById('radius').value);
+      const preferred_language = document.getElementById('language').value;
+      const privacy_accepted = document.getElementById('privacy').checked;
+      const terms_accepted = document.getElementById('terms').checked;
+      const whatsapp_accepted = document.getElementById('whatsapp').checked;
+
+      if (!mobile || !user_name || !preferred_fuel || !max_radius_km || !preferred_language || !privacy_accepted || !terms_accepted || !whatsapp_accepted) {
+        showMessage(dict.missing, true);
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = dict.sending;
+
+      try {
+        const response = await fetch(`${API_BASE}/api/register`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            mobile,
+            user_name,
+            preferred_fuel,
+            max_radius_km,
+            preferred_language,
+            privacy_accepted,
+            terms_accepted,
+            whatsapp_accepted
+          })
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          throw new Error(result.error || 'Request failed');
+        }
+
+        showMessage(dict.success, false);
+        document.getElementById('registerForm').reset();
+        document.getElementById('language').value = currentLang;
+      } catch (err) {
+        showMessage(dict.error, true);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = dict.form_submit;
+      }
+    });
+
+    applyLanguage(currentLang);
 
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
