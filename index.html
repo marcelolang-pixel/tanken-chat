@@ -3,32 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>tanken.chat | Deutschlands WhatsApp-Helfer für günstigeres Tanken</title>
-  <meta
-    name="description"
-    content="Einmal registrieren, per WhatsApp aktivieren und anschließend den Standort oder die Adresse senden, um die besten Tankoptionen in der Nähe zu erhalten."
-  />
+  <title>tanken.chat</title>
+  <meta name="description" content="tanken.chat - WhatsApp fuel helper" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
     <div class="container header-inner">
-      <a href="index.html" class="brand" aria-label="tanken.chat Startseite">
-        <img src="assets/logo.png" alt="tanken.chat Logo" />
+      <a href="index.html" class="brand" aria-label="tanken.chat home">
+        <img src="assets/logo.png" alt="tanken.chat logo" />
       </a>
 
       <div class="header-right">
         <nav class="nav-links">
-          <a href="#how-it-works">So funktioniert's</a>
-          <a href="#why">Warum tanken.chat</a>
-          <a href="register.html">Registrieren</a>
+          <a href="#how-it-works" data-i18n="nav_how">So funktioniert's</a>
+          <a href="#why" data-i18n="nav_why">Warum tanken.chat</a>
+          <a href="register.html" data-i18n="nav_register">Registrieren</a>
         </nav>
 
-        <div class="lang-switch" aria-label="Sprachauswahl">
-          <a href="index.html" class="active">DE</a>
-          <a href="index-en.html">EN</a>
-          <a href="index-tr.html">TR</a>
-          <a href="index-ar.html">AR</a>
+        <div class="lang-switch" aria-label="Language switcher">
+          <button type="button" class="lang-btn active" data-lang="de">DE</button>
+          <button type="button" class="lang-btn" data-lang="en">EN</button>
+          <button type="button" class="lang-btn" data-lang="tr">TR</button>
+          <button type="button" class="lang-btn" data-lang="ar">AR</button>
         </div>
       </div>
     </div>
@@ -38,46 +35,46 @@
     <section class="hero">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <h1>Spritpreise steigen?<br />Frag tanken.chat,<br />bevor du tankst.</h1>
+          <h1 data-i18n="hero_title">Spritpreise steigen?<br />Frag tanken.chat,<br />bevor du tankst.</h1>
 
-          <p class="lead">
+          <p class="lead" data-i18n="hero_lead">
             Keine App. Kein Suchstress. Einmal registrieren, per WhatsApp aktivieren und dann einfach deinen Standort oder deine Adresse senden, um die besten Tankoptionen in deiner Nähe innerhalb deines gewünschten Radius zu erhalten.
           </p>
 
           <div class="hero-badges">
-            <span class="badge">Deutschland zuerst</span>
-            <span class="badge">Per WhatsApp</span>
-            <span class="badge">Einfach und schnell</span>
+            <span class="badge" data-i18n="badge_1">Deutschland zuerst</span>
+            <span class="badge" data-i18n="badge_2">Per WhatsApp</span>
+            <span class="badge" data-i18n="badge_3">Einfach und schnell</span>
           </div>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="register.html">Kostenlos registrieren</a>
-            <a class="btn btn-secondary" href="https://wa.me/" target="_blank" rel="noopener noreferrer">WhatsApp öffnen</a>
+            <a class="btn btn-primary" href="register.html" data-i18n="hero_cta_primary">Kostenlos registrieren</a>
+            <a class="btn btn-secondary" href="https://wa.me/" target="_blank" rel="noopener noreferrer" data-i18n="hero_cta_secondary">WhatsApp öffnen</a>
           </div>
         </div>
 
         <aside class="hero-card">
-          <h3>So funktioniert's</h3>
-          <p>
+          <h3 data-i18n="card_title">So funktioniert's</h3>
+          <p data-i18n="card_text">
             Das MVP ist bewusst einfach aufgebaut: eine kurze Registrierung, genau eine WhatsApp-Willkommensnachricht und eine Aktivierungsantwort.
           </p>
 
           <div class="mini-steps">
             <div class="mini-step">
               <span class="mini-step-number">1</span>
-              <div>Registriere dich auf der Website mit deiner Mobilnummer und deinen Einstellungen.</div>
+              <div data-i18n="mini_1">Registriere dich auf der Website mit deiner Mobilnummer und deinen Einstellungen.</div>
             </div>
             <div class="mini-step">
               <span class="mini-step-number">2</span>
-              <div>Du erhältst genau eine WhatsApp-Willkommensnachricht.</div>
+              <div data-i18n="mini_2">Du erhältst genau eine WhatsApp-Willkommensnachricht.</div>
             </div>
             <div class="mini-step">
               <span class="mini-step-number">3</span>
-              <div>Antworte mit <strong>START</strong>, um dein Konto zu aktivieren.</div>
+              <div data-i18n="mini_3">Antworte mit <strong>START</strong>, um dein Konto zu aktivieren.</div>
             </div>
             <div class="mini-step">
               <span class="mini-step-number">4</span>
-              <div>Sende deinen Standort oder eine Adresse und erhalte Tankoptionen in deiner Nähe.</div>
+              <div data-i18n="mini_4">Sende deinen Standort oder eine Adresse und erhalte Tankoptionen in deiner Nähe.</div>
             </div>
           </div>
         </aside>
@@ -86,25 +83,25 @@
 
     <section class="section" id="why">
       <div class="container">
-        <h2 class="section-title">Warum tanken.chat</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="why_title">Warum tanken.chat</h2>
+        <p class="section-subtitle" data-i18n="why_subtitle">
           tanken.chat ist für Menschen gedacht, die vor dem Tanken schnell eine hilfreiche Antwort möchten, ohne mehrere Apps zu öffnen oder Tankstellen manuell zu vergleichen.
         </p>
 
         <div class="features">
           <article class="feature-card">
-            <h3>Einfach</h3>
-            <p>WhatsApp ist deine Benutzeroberfläche. Kein komplizierter App-Ablauf und keine unnötigen Schritte.</p>
+            <h3 data-i18n="feature_1_title">Einfach</h3>
+            <p data-i18n="feature_1_text">WhatsApp ist deine Benutzeroberfläche. Kein komplizierter App-Ablauf und keine unnötigen Schritte.</p>
           </article>
 
           <article class="feature-card">
-            <h3>Lokal</h3>
-            <p>Erhalte Optionen in deiner Nähe basierend auf deinem aktuellen Standort oder einer manuell eingegebenen Adresse.</p>
+            <h3 data-i18n="feature_2_title">Lokal</h3>
+            <p data-i18n="feature_2_text">Erhalte Optionen in deiner Nähe basierend auf deinem aktuellen Standort oder einer manuell eingegebenen Adresse.</p>
           </article>
 
           <article class="feature-card">
-            <h3>Persönlich</h3>
-            <p>Wähle bei der Registrierung deinen bevorzugten Kraftstoff, Suchradius und deine Sprache.</p>
+            <h3 data-i18n="feature_3_title">Persönlich</h3>
+            <p data-i18n="feature_3_text">Wähle bei der Registrierung deinen bevorzugten Kraftstoff, Suchradius und deine Sprache.</p>
           </article>
         </div>
       </div>
@@ -112,28 +109,28 @@
 
     <section class="section" id="how-it-works">
       <div class="container">
-        <h2 class="section-title">Von der Registrierung bis zum Tanken in 3 Schritten</h2>
-        <p class="section-subtitle">
+        <h2 class="section-title" data-i18n="steps_title">Von der Registrierung bis zum Tanken in 3 Schritten</h2>
+        <p class="section-subtitle" data-i18n="steps_subtitle">
           Der Service ist bewusst schlank gehalten, damit Nutzer schnell starten und direkt über WhatsApp interagieren können.
         </p>
 
         <div class="steps">
           <article class="step-card">
             <div class="step-number">1</div>
-            <h3>Registrieren</h3>
-            <p>Gib deine Mobilnummer, deinen Namen, deinen bevorzugten Kraftstoff, Radius und Sprache an. Bestätige Datenschutz, AGB und WhatsApp-Kommunikation.</p>
+            <h3 data-i18n="step_1_title">Registrieren</h3>
+            <p data-i18n="step_1_text">Gib deine Mobilnummer, deinen Namen, deinen bevorzugten Kraftstoff, Radius und Sprache an. Bestätige Datenschutz, AGB und WhatsApp-Kommunikation.</p>
           </article>
 
           <article class="step-card">
             <div class="step-number">2</div>
-            <h3>Aktivieren</h3>
-            <p>Nach der Registrierung erhältst du genau eine WhatsApp-Willkommensnachricht. Antworte mit <strong>START</strong>, um die Aktivierung abzuschließen.</p>
+            <h3 data-i18n="step_2_title">Aktivieren</h3>
+            <p data-i18n="step_2_text">Nach der Registrierung erhältst du genau eine WhatsApp-Willkommensnachricht. Antworte mit <strong>START</strong>, um die Aktivierung abzuschließen.</p>
           </article>
 
           <article class="step-card">
             <div class="step-number">3</div>
-            <h3>Nutzen</h3>
-            <p>Sende deinen Standort oder eine Adresse und erhalte die besten Tankoptionen in deiner Nähe mit hilfreichen Links.</p>
+            <h3 data-i18n="step_3_title">Nutzen</h3>
+            <p data-i18n="step_3_text">Sende deinen Standort oder eine Adresse und erhalte die besten Tankoptionen in deiner Nähe mit hilfreichen Links.</p>
           </article>
         </div>
       </div>
@@ -142,13 +139,13 @@
     <section class="section">
       <div class="container">
         <div class="cta-box">
-          <h2>Bereit für tanken.chat?</h2>
-          <p>
+          <h2 data-i18n="cta_title">Bereit für tanken.chat?</h2>
+          <p data-i18n="cta_text">
             Registriere dich jetzt und nutze bald Tankoptionen in deiner Nähe direkt über WhatsApp.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="register.html">Jetzt kostenlos registrieren</a>
-            <a class="btn btn-secondary" href="#how-it-works">Mehr erfahren</a>
+            <a class="btn btn-primary" href="register.html" data-i18n="cta_primary">Jetzt kostenlos registrieren</a>
+            <a class="btn btn-secondary" href="#how-it-works" data-i18n="cta_secondary">Mehr erfahren</a>
           </div>
         </div>
       </div>
@@ -159,12 +156,210 @@
     <div class="container footer-inner">
       <div>tanken.chat is a trademark of Fortuna Brands.</div>
       <div class="footer-links">
-        <a href="register.html">Registrieren</a>
-        <a href="feedback.html">Feedback</a>
-        <a href="privacy.html">Datenschutz</a>
-        <a href="terms.html">AGB</a>
+        <a href="register.html" data-i18n="footer_register">Registrieren</a>
+        <a href="feedback.html" data-i18n="footer_feedback">Feedback</a>
+        <a href="privacy.html" data-i18n="footer_privacy">Datenschutz</a>
+        <a href="terms.html" data-i18n="footer_terms">AGB</a>
       </div>
     </div>
   </footer>
+
+  <script>
+    const translations = {
+      de: {
+        nav_how: "So funktioniert's",
+        nav_why: "Warum tanken.chat",
+        nav_register: "Registrieren",
+        hero_title: "Spritpreise steigen?<br />Frag tanken.chat,<br />bevor du tankst.",
+        hero_lead: "Keine App. Kein Suchstress. Einmal registrieren, per WhatsApp aktivieren und dann einfach deinen Standort oder deine Adresse senden, um die besten Tankoptionen in deiner Nähe innerhalb deines gewünschten Radius zu erhalten.",
+        badge_1: "Deutschland zuerst",
+        badge_2: "Per WhatsApp",
+        badge_3: "Einfach und schnell",
+        hero_cta_primary: "Kostenlos registrieren",
+        hero_cta_secondary: "WhatsApp öffnen",
+        card_title: "So funktioniert's",
+        card_text: "Das MVP ist bewusst einfach aufgebaut: eine kurze Registrierung, genau eine WhatsApp-Willkommensnachricht und eine Aktivierungsantwort.",
+        mini_1: "Registriere dich auf der Website mit deiner Mobilnummer und deinen Einstellungen.",
+        mini_2: "Du erhältst genau eine WhatsApp-Willkommensnachricht.",
+        mini_3: "Antworte mit <strong>START</strong>, um dein Konto zu aktivieren.",
+        mini_4: "Sende deinen Standort oder eine Adresse und erhalte Tankoptionen in deiner Nähe.",
+        why_title: "Warum tanken.chat",
+        why_subtitle: "tanken.chat ist für Menschen gedacht, die vor dem Tanken schnell eine hilfreiche Antwort möchten, ohne mehrere Apps zu öffnen oder Tankstellen manuell zu vergleichen.",
+        feature_1_title: "Einfach",
+        feature_1_text: "WhatsApp ist deine Benutzeroberfläche. Kein komplizierter App-Ablauf und keine unnötigen Schritte.",
+        feature_2_title: "Lokal",
+        feature_2_text: "Erhalte Optionen in deiner Nähe basierend auf deinem aktuellen Standort oder einer manuell eingegebenen Adresse.",
+        feature_3_title: "Persönlich",
+        feature_3_text: "Wähle bei der Registrierung deinen bevorzugten Kraftstoff, Suchradius und deine Sprache.",
+        steps_title: "Von der Registrierung bis zum Tanken in 3 Schritten",
+        steps_subtitle: "Der Service ist bewusst schlank gehalten, damit Nutzer schnell starten und direkt über WhatsApp interagieren können.",
+        step_1_title: "Registrieren",
+        step_1_text: "Gib deine Mobilnummer, deinen Namen, deinen bevorzugten Kraftstoff, Radius und Sprache an. Bestätige Datenschutz, AGB und WhatsApp-Kommunikation.",
+        step_2_title: "Aktivieren",
+        step_2_text: "Nach der Registrierung erhältst du genau eine WhatsApp-Willkommensnachricht. Antworte mit <strong>START</strong>, um die Aktivierung abzuschließen.",
+        step_3_title: "Nutzen",
+        step_3_text: "Sende deinen Standort oder eine Adresse und erhalte die besten Tankoptionen in deiner Nähe mit hilfreichen Links.",
+        cta_title: "Bereit für tanken.chat?",
+        cta_text: "Registriere dich jetzt und nutze bald Tankoptionen in deiner Nähe direkt über WhatsApp.",
+        cta_primary: "Jetzt kostenlos registrieren",
+        cta_secondary: "Mehr erfahren",
+        footer_register: "Registrieren",
+        footer_feedback: "Feedback",
+        footer_privacy: "Datenschutz",
+        footer_terms: "AGB"
+      },
+      en: {
+        nav_how: "How it works",
+        nav_why: "Why tanken.chat",
+        nav_register: "Register",
+        hero_title: "Fuel prices rising?<br />Ask tanken.chat<br />before you refuel.",
+        hero_lead: "No app. No search stress. Register once, activate by WhatsApp, then send your location or address to receive the best nearby fuel options within your chosen radius.",
+        badge_1: "Germany-first",
+        badge_2: "WhatsApp-based",
+        badge_3: "Simple and fast",
+        hero_cta_primary: "Register free",
+        hero_cta_secondary: "Open WhatsApp",
+        card_title: "How it works",
+        card_text: "The MVP is intentionally simple: one quick registration, one WhatsApp welcome message, and one activation reply.",
+        mini_1: "Register on the website with your mobile number and preferences.",
+        mini_2: "Receive exactly one WhatsApp welcome message.",
+        mini_3: "Reply <strong>START</strong> to activate your account.",
+        mini_4: "Send your location or address and receive nearby fuel options.",
+        why_title: "Why tanken.chat",
+        why_subtitle: "tanken.chat is designed for people who want a quick answer before refueling, without opening multiple apps or manually comparing stations.",
+        feature_1_title: "Simple",
+        feature_1_text: "Use WhatsApp as your interface. No complicated app flow and no unnecessary steps.",
+        feature_2_title: "Localized",
+        feature_2_text: "Get nearby options based on your current location or a manually entered address.",
+        feature_3_title: "Personalized",
+        feature_3_text: "Choose your preferred fuel, search radius, and language during registration.",
+        steps_title: "From registration to refueling in 3 steps",
+        steps_subtitle: "The service is intentionally lightweight so users can start quickly and interact directly through WhatsApp.",
+        step_1_title: "Register",
+        step_1_text: "Add your mobile number, user name, preferred fuel, radius, and language. Accept privacy, terms, and WhatsApp communication.",
+        step_2_title: "Activate",
+        step_2_text: "After registration, you receive exactly one WhatsApp welcome message. Reply <strong>START</strong> to complete activation.",
+        step_3_title: "Use",
+        step_3_text: "Send your location or address and receive the best nearby fuel options with helpful links.",
+        cta_title: "Ready for tanken.chat?",
+        cta_text: "Register now and soon use nearby fuel options directly through WhatsApp.",
+        cta_primary: "Register free now",
+        cta_secondary: "Learn more",
+        footer_register: "Register",
+        footer_feedback: "Feedback",
+        footer_privacy: "Privacy",
+        footer_terms: "Terms"
+      },
+      tr: {
+        nav_how: "Nasıl çalışır",
+        nav_why: "Neden tanken.chat",
+        nav_register: "Kayıt ol",
+        hero_title: "Yakıt fiyatları artıyor mu?<br />Yakıt almadan önce<br />tanken.chat'e sor.",
+        hero_lead: "Uygulama yok. Arama stresi yok. Bir kez kayıt ol, WhatsApp ile etkinleştir, sonra konumunu veya adresini gönder ve seçtiğin yarıçap içindeki en iyi yakın yakıt seçeneklerini al.",
+        badge_1: "Önce Almanya",
+        badge_2: "WhatsApp tabanlı",
+        badge_3: "Basit ve hızlı",
+        hero_cta_primary: "Ücretsiz kayıt ol",
+        hero_cta_secondary: "WhatsApp'ı aç",
+        card_title: "Nasıl çalışır",
+        card_text: "MVP bilerek basit tasarlandı: hızlı bir kayıt, bir WhatsApp karşılama mesajı ve bir etkinleştirme yanıtı.",
+        mini_1: "Web sitesinde cep telefonu numaran ve tercihlerinle kayıt ol.",
+        mini_2: "Tam olarak bir WhatsApp karşılama mesajı al.",
+        mini_3: "Hesabını etkinleştirmek için <strong>START</strong> yaz ve gönder.",
+        mini_4: "Konumunu veya adresini gönder ve yakındaki yakıt seçeneklerini al.",
+        why_title: "Neden tanken.chat",
+        why_subtitle: "tanken.chat, yakıt almadan önce hızlı bir cevap isteyen ve birden fazla uygulama açmadan veya istasyonları manuel karşılaştırmadan çözüm arayan kişiler için tasarlanmıştır.",
+        feature_1_title: "Basit",
+        feature_1_text: "Arayüz olarak WhatsApp kullanılır. Karmaşık uygulama akışı ve gereksiz adımlar yoktur.",
+        feature_2_title: "Yerel",
+        feature_2_text: "Mevcut konumuna veya elle girdiğin adrese göre yakın seçenekleri al.",
+        feature_3_title: "Kişisel",
+        feature_3_text: "Kayıt sırasında tercih ettiğin yakıt türünü, arama yarıçapını ve dili seç.",
+        steps_title: "Kayıttan yakıt almaya 3 adım",
+        steps_subtitle: "Hizmet, kullanıcıların hızlı başlaması ve doğrudan WhatsApp üzerinden etkileşim kurması için hafif tutulmuştur.",
+        step_1_title: "Kayıt ol",
+        step_1_text: "Cep telefonu numaranı, kullanıcı adını, tercih ettiğin yakıtı, yarıçapı ve dili ekle. Gizlilik, şartlar ve WhatsApp iletişimini kabul et.",
+        step_2_title: "Etkinleştir",
+        step_2_text: "Kayıttan sonra tam olarak bir WhatsApp karşılama mesajı alırsın. Etkinleştirmeyi tamamlamak için <strong>START</strong> yanıtını ver.",
+        step_3_title: "Kullan",
+        step_3_text: "Konumunu veya adresini gönder ve faydalı bağlantılarla en iyi yakın yakıt seçeneklerini al.",
+        cta_title: "tanken.chat için hazır mısın?",
+        cta_text: "Şimdi kayıt ol ve yakında doğrudan WhatsApp üzerinden yakındaki yakıt seçeneklerini kullan.",
+        cta_primary: "Şimdi ücretsiz kayıt ol",
+        cta_secondary: "Daha fazla bilgi",
+        footer_register: "Kayıt ol",
+        footer_feedback: "Geri bildirim",
+        footer_privacy: "Gizlilik",
+        footer_terms: "Şartlar"
+      },
+      ar: {
+        nav_how: "كيف يعمل",
+        nav_why: "لماذا tanken.chat",
+        nav_register: "التسجيل",
+        hero_title: "هل ترتفع أسعار الوقود؟<br />اسأل tanken.chat<br />قبل أن تعبئ الوقود.",
+        hero_lead: "لا تطبيق. لا تعب في البحث. سجّل مرة واحدة، فعّل عبر واتساب، ثم أرسل موقعك أو عنوانك لتحصل على أفضل خيارات الوقود القريبة ضمن النطاق الذي تختاره.",
+        badge_1: "ألمانيا أولاً",
+        badge_2: "يعتمد على واتساب",
+        badge_3: "بسيط وسريع",
+        hero_cta_primary: "سجّل مجاناً",
+        hero_cta_secondary: "افتح واتساب",
+        card_title: "كيف يعمل",
+        card_text: "تم تصميم النسخة الأولية ببساطة: تسجيل سريع واحد، رسالة ترحيب واحدة على واتساب، ورد تفعيل واحد.",
+        mini_1: "سجّل في الموقع باستخدام رقم هاتفك المحمول وتفضيلاتك.",
+        mini_2: "ستتلقى رسالة ترحيب واحدة فقط على واتساب.",
+        mini_3: "أرسل <strong>START</strong> لتفعيل حسابك.",
+        mini_4: "أرسل موقعك أو عنوانك واحصل على خيارات الوقود القريبة.",
+        why_title: "لماذا tanken.chat",
+        why_subtitle: "تم تصميم tanken.chat للأشخاص الذين يريدون إجابة سريعة قبل التزود بالوقود، من دون فتح عدة تطبيقات أو مقارنة المحطات يدوياً.",
+        feature_1_title: "بسيط",
+        feature_1_text: "استخدم واتساب كواجهة لك. لا تدفق تطبيق معقد ولا خطوات غير ضرورية.",
+        feature_2_title: "محلي",
+        feature_2_text: "احصل على خيارات قريبة بناءً على موقعك الحالي أو عنوان تدخله يدوياً.",
+        feature_3_title: "شخصي",
+        feature_3_text: "اختر نوع الوقود المفضل، ونطاق البحث، واللغة أثناء التسجيل.",
+        steps_title: "من التسجيل إلى التزود بالوقود في 3 خطوات",
+        steps_subtitle: "تم إبقاء الخدمة خفيفة حتى يتمكن المستخدمون من البدء بسرعة والتفاعل مباشرة عبر واتساب.",
+        step_1_title: "التسجيل",
+        step_1_text: "أدخل رقم هاتفك المحمول واسم المستخدم ونوع الوقود المفضل والنطاق واللغة. وافق على الخصوصية والشروط والتواصل عبر واتساب.",
+        step_2_title: "التفعيل",
+        step_2_text: "بعد التسجيل، ستتلقى رسالة ترحيب واحدة فقط على واتساب. أرسل <strong>START</strong> لإكمال التفعيل.",
+        step_3_title: "الاستخدام",
+        step_3_text: "أرسل موقعك أو عنوانك واحصل على أفضل خيارات الوقود القريبة مع روابط مفيدة.",
+        cta_title: "هل أنت مستعد لـ tanken.chat؟",
+        cta_text: "سجّل الآن واستخدم قريباً خيارات الوقود القريبة مباشرة عبر واتساب.",
+        cta_primary: "سجّل مجاناً الآن",
+        cta_secondary: "اعرف المزيد",
+        footer_register: "التسجيل",
+        footer_feedback: "ملاحظات",
+        footer_privacy: "الخصوصية",
+        footer_terms: "الشروط"
+      }
+    };
+
+    function applyLanguage(lang) {
+      const dict = translations[lang] || translations.de;
+      document.documentElement.lang = lang === 'ar' ? 'ar' : lang;
+      document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+      document.body.classList.toggle('rtl', lang === 'ar');
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.innerHTML = dict[key];
+      });
+
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.lang === lang);
+      });
+
+      localStorage.setItem('tanken_lang', lang);
+    }
+
+    const savedLang = localStorage.getItem('tanken_lang') || 'de';
+    applyLanguage(savedLang);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+  </script>
 </body>
 </html>
