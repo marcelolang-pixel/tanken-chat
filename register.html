@@ -50,7 +50,9 @@
         <h2 data-i18n="form_title">Kostenlos registrieren</h2>
         <p class="intro" data-i18n="form_intro">Fülle das Formular aus, um deinen WhatsApp-basierten Tankservice einzurichten.</p>
 
-        <form class="form-grid" id="registerForm">
+        <div id="form-status" class="form-note" style="display:none;"></div>
+
+        <form class="form-grid" id="register-form">
           <div class="field">
             <label for="mobile" data-i18n="label_mobile">Mobilnummer</label>
             <input class="input" type="tel" id="mobile" name="mobile" placeholder="+491701234567" required />
@@ -116,10 +118,8 @@
             Mit der Registrierung bereitest du dein Konto auf eine einmalige WhatsApp-Willkommensnachricht vor. Die Aktivierung ist erst abgeschlossen, nachdem du mit <strong>START</strong> geantwortet hast.
           </div>
 
-          <div id="formMessage" class="form-note" style="display:none;"></div>
-
           <div class="form-actions">
-            <button class="btn btn-primary" id="submitBtn" type="submit" data-i18n="form_submit">Konto erstellen</button>
+            <button class="btn btn-primary" type="submit" id="submit-btn" data-i18n="form_submit">Konto erstellen</button>
             <a class="btn btn-secondary" href="index.html" data-i18n="form_back">Zurück zur Startseite</a>
           </div>
         </form>
@@ -144,7 +144,7 @@
   </footer>
 
   <script>
-    const API_BASE = "https://api.tanken.chat";
+    const API_BASE = "https://YOUR-WORKER.your-subdomain.workers.dev";
 
     const translations = {
       de: {
@@ -183,10 +183,9 @@
         footer_feedback: "Feedback",
         footer_privacy: "Datenschutz",
         footer_terms: "AGB",
-        sending: "Wird gesendet...",
-        success: "Registrierung erfolgreich. Bitte prüfe jetzt WhatsApp und antworte mit START, um dein Konto zu aktivieren.",
-        error: "Die Registrierung konnte nicht abgeschlossen werden. Bitte versuche es erneut.",
-        missing: "Bitte fülle alle Felder korrekt aus und akzeptiere alle Pflichtfelder."
+        submit_success: "Registrierung erfolgreich. Bitte prüfe jetzt dein WhatsApp und antworte dort mit START, um dein Konto zu aktivieren.",
+        submit_error: "Registrierung fehlgeschlagen. Bitte versuche es erneut.",
+        submit_loading: "Registrierung wird gesendet..."
       },
       en: {
         nav_home: "Home",
@@ -224,10 +223,9 @@
         footer_feedback: "Feedback",
         footer_privacy: "Privacy",
         footer_terms: "Terms",
-        sending: "Submitting...",
-        success: "Registration successful. Please check WhatsApp and reply START to activate your account.",
-        error: "Registration could not be completed. Please try again.",
-        missing: "Please complete all fields correctly and accept all required items."
+        submit_success: "Registration successful. Please check WhatsApp now and reply START there to activate your account.",
+        submit_error: "Registration failed. Please try again.",
+        submit_loading: "Submitting registration..."
       },
       tr: {
         nav_home: "Ana sayfa",
@@ -265,16 +263,15 @@
         footer_feedback: "Geri bildirim",
         footer_privacy: "Gizlilik",
         footer_terms: "Şartlar",
-        sending: "Gönderiliyor...",
-        success: "Kayıt başarılı. Lütfen şimdi WhatsApp'ı kontrol et ve hesabını etkinleştirmek için START yanıtını ver.",
-        error: "Kayıt tamamlanamadı. Lütfen tekrar dene.",
-        missing: "Lütfen tüm alanları doğru doldur ve gerekli tüm kutuları kabul et."
+        submit_success: "Kayıt başarılı. Lütfen şimdi WhatsApp'ını kontrol et ve hesabını etkinleştirmek için START yanıtını ver.",
+        submit_error: "Kayıt başarısız oldu. Lütfen tekrar dene.",
+        submit_loading: "Kayıt gönderiliyor..."
       },
       ar: {
         nav_home: "الرئيسية",
         nav_how: "كيف يعمل",
         info_badge: "تسجيل مجاني",
-        info_title: "سجّل مرة واحدة. فعّل عبر واتساب. وازود بالوقود بذكاء أكبر.",
+        info_title: "سجّل مرة واحدة. فعّل عبر واتساب. وتزوّد بالوقود بذكاء أكبر.",
         info_text: "بعد التسجيل، ستتلقى رسالة ترحيب واحدة فقط على واتساب. أرسل <strong>START</strong> لإكمال التفعيل.",
         info_1: "<strong>التسجيل:</strong> أضف رقم الهاتف المحمول واسم المستخدم ونوع الوقود والنطاق واللغة.",
         info_2: "<strong>التفعيل:</strong> أرسل START عبر واتساب.",
@@ -306,18 +303,18 @@
         footer_feedback: "ملاحظات",
         footer_privacy: "الخصوصية",
         footer_terms: "الشروط",
-        sending: "جارٍ الإرسال...",
-        success: "تم التسجيل بنجاح. يرجى التحقق من واتساب الآن والرد بكلمة START لتفعيل حسابك.",
-        error: "تعذر إكمال التسجيل. يرجى المحاولة مرة أخرى.",
-        missing: "يرجى إكمال جميع الحقول بشكل صحيح والموافقة على جميع المتطلبات."
+        submit_success: "تم التسجيل بنجاح. يرجى التحقق من واتساب الآن والرد بكلمة START لتفعيل حسابك.",
+        submit_error: "فشل التسجيل. يرجى المحاولة مرة أخرى.",
+        submit_loading: "جارٍ إرسال التسجيل..."
       }
     };
 
-    let currentLang = localStorage.getItem('tanken_lang') || 'de';
+    function currentLang() {
+      return localStorage.getItem('tanken_lang') || 'de';
+    }
 
     function applyLanguage(lang) {
       const dict = translations[lang] || translations.de;
-      currentLang = lang;
       document.documentElement.lang = lang === 'ar' ? 'ar' : lang;
       document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
       document.body.classList.toggle('rtl', lang === 'ar');
@@ -331,81 +328,80 @@
         btn.classList.toggle('active', btn.dataset.lang === lang);
       });
 
+      localStorage.setItem('tanken_lang', lang);
+
       const select = document.getElementById('language');
       if (select) select.value = lang;
-
-      localStorage.setItem('tanken_lang', lang);
     }
 
-    function showMessage(text, isError = false) {
-      const box = document.getElementById('formMessage');
-      box.style.display = 'block';
-      box.textContent = text;
-      box.style.color = isError ? '#b91c1c' : '#15803d';
-      box.style.fontWeight = '700';
+    const savedLang = currentLang();
+    applyLanguage(savedLang);
+
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
+    });
+
+    const form = document.getElementById('register-form');
+    const statusBox = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submit-btn');
+
+    function showStatus(message, ok = true) {
+      statusBox.style.display = 'block';
+      statusBox.textContent = message;
+      statusBox.style.color = ok ? '#15803d' : '#b91c1c';
+      statusBox.style.fontWeight = '700';
     }
 
-    document.getElementById('registerForm').addEventListener('submit', async (e) => {
+    function normalizePhone(phone) {
+      return phone.replace(/[\s\-()/]/g, '');
+    }
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      const dict = translations[currentLang] || translations.de;
-      const submitBtn = document.getElementById('submitBtn');
-      const mobile = document.getElementById('mobile').value.trim();
-      const user_name = document.getElementById('username').value.trim();
-      const preferred_fuel = document.getElementById('fuel').value;
-      const max_radius_km = Number(document.getElementById('radius').value);
-      const preferred_language = document.getElementById('language').value;
-      const privacy_accepted = document.getElementById('privacy').checked;
-      const terms_accepted = document.getElementById('terms').checked;
-      const whatsapp_accepted = document.getElementById('whatsapp').checked;
+      const lang = currentLang();
+      const t = translations[lang] || translations.de;
 
-      if (!mobile || !user_name || !preferred_fuel || !max_radius_km || !preferred_language || !privacy_accepted || !terms_accepted || !whatsapp_accepted) {
-        showMessage(dict.missing, true);
-        return;
-      }
-
+      statusBox.style.display = 'none';
       submitBtn.disabled = true;
-      submitBtn.textContent = dict.sending;
+      submitBtn.textContent = t.submit_loading;
+
+      const payload = {
+        mobile: normalizePhone(document.getElementById('mobile').value.trim()),
+        username: document.getElementById('username').value.trim(),
+        fuel: document.getElementById('fuel').value,
+        radius_km: document.getElementById('radius').value,
+        language: document.getElementById('language').value || lang,
+        privacy_accepted: document.getElementById('privacy').checked,
+        terms_accepted: document.getElementById('terms').checked,
+        whatsapp_accepted: document.getElementById('whatsapp').checked
+      };
 
       try {
-        const response = await fetch(`${API_BASE}/api/register`, {
+        const res = await fetch(`${API_BASE}/api/register`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify({
-            mobile,
-            user_name,
-            preferred_fuel,
-            max_radius_km,
-            preferred_language,
-            privacy_accepted,
-            terms_accepted,
-            whatsapp_accepted
-          })
+          body: JSON.stringify(payload)
         });
 
-        const result = await response.json();
+        const data = await res.json();
 
-        if (!response.ok || !result.success) {
-          throw new Error(result.error || 'Request failed');
+        if (!res.ok || !data.ok) {
+          throw new Error(data.error || 'Registration failed');
         }
 
-        showMessage(dict.success, false);
-        document.getElementById('registerForm').reset();
-        document.getElementById('language').value = currentLang;
+        form.reset();
+        document.getElementById('language').value = lang;
+        showStatus(t.submit_success, true);
       } catch (err) {
-        showMessage(dict.error, true);
+        console.error(err);
+        showStatus(t.submit_error, false);
       } finally {
         submitBtn.disabled = false;
-        submitBtn.textContent = dict.form_submit;
+        submitBtn.textContent = t.form_submit;
       }
-    });
-
-    applyLanguage(currentLang);
-
-    document.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => applyLanguage(btn.dataset.lang));
     });
   </script>
 </body>
