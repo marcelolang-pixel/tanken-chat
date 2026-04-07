@@ -1,83 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>tanken.chat</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tanken.chat | Germany-first WhatsApp fuel helper</title>
+  <meta name="description" content="Register free, activate by WhatsApp, then send your location or address and get the top nearby fuel options within your chosen radius." />
+  <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="./index.html" class="brand" aria-label="tanken.chat home">
+        <img src="./logo.png" alt="tanken.chat logo" />
+      </a>
 
-<header class="topbar">
-  <img src="assets/logo.png" alt="tanken.chat logo" class="logo-large">
-</header>
-
-<main class="hero-grid">
-
-  <section class="hero-card">
-    <div class="pill">Germany-first WhatsApp fuel helper</div>
-
-    <h1>
-      Fuel prices rising?<br>
-      Ask tanken.chat<br>
-      before you refuel.
-    </h1>
-
-    <p>
-      No app. No search stress. Register once, activate by WhatsApp, then send your location or address and get the top nearby fuel options within your chosen radius.
-    </p>
-
-    <div class="hero-actions">
-      <a href="register.html" class="btn-primary">Register free</a>
-      <a href="https://wa.me/498921548989?text=START" class="btn-secondary">Open WhatsApp</a>
+      <nav class="nav-links">
+        <a href="#how-it-works">How it works</a>
+        <a href="#why">Why tanken.chat</a>
+        <a href="./register.html">Register</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="info-card">
-    <h2>How it works</h2>
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1>Fuel prices rising?<br />Ask tanken.chat before you refuel.</h1>
 
-    <ol>
-      <li>Register once on this website.</li>
-      <li>Receive one WhatsApp welcome message.</li>
-      <li>Reply <span class="inline-pill">START</span> to activate.</li>
-      <li>Send your location or address.</li>
-      <li>Receive the top nearby fuel options with map links.</li>
-    </ol>
+          <p class="lead">
+            No app. No search stress. Register once, activate by WhatsApp, then send your location or address and receive the top nearby fuel options within your chosen radius.
+          </p>
 
-    <div class="note-box">
-      The MVP is built for speed. The fastest and most reliable path is to share your WhatsApp location instead of typing a long address.
+          <div class="hero-badges">
+            <span class="badge">Germany-first</span>
+            <span class="badge">WhatsApp-based</span>
+            <span class="badge">Simple and fast</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./register.html">Register free</a>
+            <a class="btn btn-secondary" href="https://wa.me/" target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>How it works</h3>
+          <p>
+            The MVP is built for speed: one quick registration, one welcome WhatsApp message, one activation reply.
+          </p>
+
+          <div class="mini-steps">
+            <div class="mini-step">
+              <span class="mini-step-number">1</span>
+              <div>Register on the website with your mobile number and preferences.</div>
+            </div>
+            <div class="mini-step">
+              <span class="mini-step-number">2</span>
+              <div>Receive exactly one WhatsApp welcome message.</div>
+            </div>
+            <div class="mini-step">
+              <span class="mini-step-number">3</span>
+              <div>Reply <strong>START</strong> to activate your account.</div>
+            </div>
+            <div class="mini-step">
+              <span class="mini-step-number">4</span>
+              <div>Send your location or address and receive nearby fuel options.</div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="why">
+      <div class="container">
+        <h2 class="section-title">Why tanken.chat</h2>
+        <p class="section-subtitle">
+          tanken.chat is designed for people who want a quick answer before refueling, without opening multiple apps or comparing stations manually.
+        </p>
+
+        <div class="features">
+          <article class="feature-card">
+            <h3>Simple</h3>
+            <p>Use WhatsApp as your interface. No complicated app flow and no unnecessary screens.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Localized</h3>
+            <p>Get nearby options based on your current location or an address you type manually.</p>
+          </article>
+
+          <article class="feature-card">
+            <h3>Personalized</h3>
+            <p>Choose your preferred fuel, search radius, and language during registration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="how-it-works">
+      <div class="container">
+        <h2 class="section-title">From registration to refueling in 3 steps</h2>
+        <p class="section-subtitle">
+          The service is intentionally lightweight so users can start quickly and interact directly through WhatsApp.
+        </p>
+
+        <div class="steps">
+          <article class="step-card">
+            <div class="step-number">1</div>
+            <h3>Register</h3>
+            <p>Add your mobile number, user name, preferred fuel, radius, and language. Accept privacy, terms, and WhatsApp communication.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">2</div>
+            <h3>Activate</h3>
+            <p>After registration, you receive one WhatsApp welcome message. Reply <strong>START</strong> to complete activation.</p>
+          </article>
+
+          <article class="step-card">
+            <div class="step-number">3</div>
+            <h3>Use</h3>
+            <p>Send your location or address and receive the top nearby fuel options with useful links.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-box">
+          <h2>Ready to try tanken.chat?</h2>
+          <p>
+            Register now and be ready to ask for nearby fuel options directly in WhatsApp.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="./register.html">Start free registration</a>
+            <a class="btn btn-secondary" href="#how-it-works">Learn more</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>tanken.chat is a trademark of Fortuna Brands.</div>
+      <div class="footer-links">
+        <a href="./register.html">Register</a>
+        <a href="#">Feedback</a>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+      </div>
     </div>
-  </section>
-
-</main>
-
-<section class="mini-grid">
-  <div class="mini-card">
-    <h3>Register</h3>
-    <p>Add your mobile number, preferred fuel, radius and language.</p>
-  </div>
-
-  <div class="mini-card">
-    <h3>Activate</h3>
-    <p>Reply START to the welcome message once.</p>
-  </div>
-
-  <div class="mini-card">
-    <h3>Use</h3>
-    <p>Send location. Receive nearby cheapest options.</p>
-  </div>
-</section>
-
-<footer class="footer">
-  <nav>
-    <a href="register.html">Register</a>
-    <a href="feedback.html">Feedback</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="terms.html">Terms</a>
-  </nav>
-
-  <p>tanken.chat is a trademark of Fortuna Brands.</p>
-</footer>
-
+  </footer>
 </body>
 </html>
