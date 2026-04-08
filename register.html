@@ -9,23 +9,34 @@
 </head>
 <body data-page="register">
   <header class="site-header">
-    <div class="container header-inner">
-      <a href="index.html" class="brand small" aria-label="tanken.chat home">
-        <img src="assets/logo.png" alt="tanken.chat logo" />
-      </a>
+    <div class="container header-shell">
+      <div class="header-top">
+        <a href="index.html" class="brand small" aria-label="tanken.chat home">
+          <img src="assets/logo.png" alt="tanken.chat logo" />
+        </a>
 
-      <div class="header-right">
-        <nav class="nav-links">
-          <a href="index.html" data-i18n="nav_home">Startseite</a>
-          <a href="index.html#how-it-works" data-i18n="nav_how">So funktioniert's</a>
-        </nav>
+        <div class="header-right desktop-only">
+          <nav class="nav-links">
+            <a href="index.html" data-i18n="nav_home">Startseite</a>
+            <a href="index.html#how-it-works" data-i18n="nav_how">So funktioniert's</a>
+          </nav>
+        </div>
+      </div>
 
+      <div class="header-language-row">
         <div class="lang-switch" aria-label="Language switcher">
           <button type="button" class="lang-btn active" data-lang="de">DE</button>
           <button type="button" class="lang-btn" data-lang="en">EN</button>
           <button type="button" class="lang-btn" data-lang="tr">TR</button>
           <button type="button" class="lang-btn" data-lang="ar">AR</button>
         </div>
+      </div>
+
+      <div class="header-nav-mobile mobile-only">
+        <nav class="nav-links nav-links-mobile">
+          <a href="index.html" data-i18n="nav_home">Startseite</a>
+          <a href="index.html#how-it-works" data-i18n="nav_how">So funktioniert's</a>
+        </nav>
       </div>
     </div>
   </header>
@@ -271,7 +282,7 @@
         nav_home: "الرئيسية",
         nav_how: "كيف يعمل",
         info_badge: "تسجيل مجاني",
-        info_title: "سجّل مرة واحدة. فعّل عبر واتساب. وتزوّد بالوقود بذكاء أكبر.",
+        info_title: "سجّل مرة واحدة. فعّل عبر واتساب. وازود بالوقود بذكاء أكبر.",
         info_text: "بعد التسجيل، ستتلقى رسالة ترحيب واحدة فقط على واتساب. أرسل <strong>START</strong> لإكمال التفعيل.",
         info_1: "<strong>التسجيل:</strong> أضف رقم الهاتف المحمول واسم المستخدم ونوع الوقود والنطاق واللغة.",
         info_2: "<strong>التفعيل:</strong> أرسل START عبر واتساب.",
